@@ -37,10 +37,11 @@ class PeliculaController extends Controller
             $Pelicula = new Pelicula();
             $Pelicula->nombre = $request->input('img');
             $Pelicula->img = $request->input('nombre');
+            $Pelicula->activo = 1;
             $Pelicula->save();
-            return $this->sendResponse($Pelicula, "Pelicula ingresada correctamente");
+            return "Pelicula ingresada correctamente";
         } catch (Exception $e) {
-            return $this->sendError("Error Conocido", "Error al crear la Pelicula", 200);
+            return "Error";
         }
     }
 
