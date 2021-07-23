@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Pelicula;
 class PeliculaController extends Controller
 {
     public function index()
@@ -12,7 +12,7 @@ class PeliculaController extends Controller
             ->select('idPelicula', 'nombre', 'img')
             ->get();
 
-        return $this->sendResponse($Peliculas, "Peliculas obtenidas correctamente");
+        return $Peliculas;
     }
 
     /**
