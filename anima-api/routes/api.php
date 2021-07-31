@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('showById', 'App\Http\Controllers\PeliculaController@showById');
 Route::get('getAll', 'App\Http\Controllers\PeliculaController@getAll');
-Route::get('store', 'App\Http\Controllers\PeliculaController@store');
+Route::post('store', 'App\Http\Controllers\PeliculaController@store');
