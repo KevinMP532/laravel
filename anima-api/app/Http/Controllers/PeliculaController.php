@@ -29,12 +29,12 @@ class PeliculaController extends Controller
     {
         try {
             $Pelicula = new Pelicula();
-            $Pelicula->nombre = $request->input('img');
-            $Pelicula->img = $request->input('nombre');
+            $Pelicula->nombre = $request->input('nombre');
+            $Pelicula->img = $request->input('img');
             $Pelicula->activo = 1;
             $Pelicula->save();
             return "Pelicula ingresada correctamente";
-        } catch (Exception $e) {
+        } catch (\Illuminate\Database\QueryException $e) {
             return "Error";
         }
     }
